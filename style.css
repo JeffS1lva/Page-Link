@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box ; /* Propriedade serve para  saber medida do tamanho da caixa, para que seja medida através da borda.*/
+
+}
+
+:root{
+  --text-color: white;
+  --bg-url: url(./assets/assets/bg-mobile.jpg); 
+  --stroke-color: rgba(255, 255, 255, 0.2);
+  --surface-color: rgba(255, 255, 255, 0.2);
+  --surface-color-hover: rgba (0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url:  url("./assets/moon-stars.svg");
+}
+
+.light{
+  --text-color:black;
+  --bg-url: url(./assets/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.2);
+  --surface-color:rgba(0, 0, 0, 0.2);
+  --surface-color-hover: rgba (0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url:  url("./assets/sun.svg");
+}
+
+body {
+  background: var(--bg-url);
+  /*Ela coloca imagem como plano de fundo*/
+  
+  background-repeat: no-repeat;
+  /*Comando para não repetir a imagem*/
+
+  background-position: top center; 
+  /*Maneira de centralizar*/
+  
+  background-size:cover ; 
+  /*Comando cobre todo o espaço visivel*/
+}
+
+body *{
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color)
+}
+
+#vagao{
+  width: 100%;
+  max-width: 588px;
+  height: 712px;
+  margin: auto;/*Maneira de centralizar div e somente espaçamentos laterais. */ 
+  padding-top: 56px;
+}
+
+#image{
+  text-align: center;
+  padding:24px;/*Essa propriedade preenche todos os lugares da div*/
+
+}
+
+#image img{
+  width: 112px;/*Largura da img, altura não precisa*/
+}
+
+#image p{
+  font-weight: 500; /*É útil para aplicar ou remover negrito de um elemento de texto.*/
+  line-height: 24px; /*Esta propriedade é a altura da linha.*/
+  margin-top: 8px; /*Essa propriedade da uma margem de cima para baixo*/
+
+}
+
+#switch{
+  position: relative;
+  width: 64px;
+  margin: 4px auto; /*Outra forma de centralizar um elemento com position:relative;.*/
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center; /*Forma de centralizar com position:absolute;.*/
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+
+#switch span{
+  display: block; /*Os elementos ficarão um abaixo do outro, e inline ficará um do lado do outro.*/
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /*Propriedade que funciona com "flex" para deixar em coluna.*/
+  gap: 16px; /*Propriedade funciona dando espaço entre os elementos.*/
+  padding: 24px 0;
+}
+
+ul li a {
+   background: var(--surface-color); /*0.1 é a totalidade da cor entre branco ou transparente.*/
+   border: 1px solid var(--stroke-color);
+   display:flex; /*Propriedade que alarga elementos da caixa*/
+   justify-content: center; /*centraliza a caixa de texto, dentro da propriedade "display:flex".*/
+   padding: 16px 24px;
+   border-radius: 8px;
+   backdrop-filter: blur(4px); /*Deixa o elemento com uma cor mais embaçada, um tipo de mancha.*/
+   -webkit-backdrop-filter: blur(4px); /*webkit é necessário algumas vezes usar por causa de alguns browsers.*/
+
+   text-decoration: none; /*Tirar uma linha.*/
+   font-weight: 500; /* Para ser objetivo melhor verificar na fonte linkada no head.*/
+
+   transition: background 0.2s
+}
+
+ul li a:hover{
+  background: var(--surface-color-hover); /*Aplica as coisas quando passar mouse encima.*/
+  border: 1.5px solid var(--text-color);
+}
+
+#icons{
+  display: flex; /*Outra forma de centralizar um elemento com display:flex; com just-c".*/
+  justify-content: center; 
+  gap: 16px;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#icons a{
+  display: flex;/*Forma de centralizar um elemento com flex e align-itens.*/
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2 ;
+}
+
+#icons a:hover{
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+footer{
+  padding: 24px 0;
+  text-align: center; /*Centralizando caixa de texto.*/
+}
