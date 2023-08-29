@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box ; /* Propriedade serve para  saber medida do tamanho da caixa, para que seja medida através da borda.*/
-
 }
 
 :root{
@@ -115,6 +114,7 @@ ul {
 
 ul li a {
    background: var(--surface-color); /*0.1 é a totalidade da cor entre branco ou transparente.*/
+   text-transform: uppercase;
    border: 1px solid var(--stroke-color);
    display:flex; /*Propriedade que alarga elementos da caixa*/
    justify-content: center; /*centraliza a caixa de texto, dentro da propriedade "display:flex".*/
@@ -125,7 +125,6 @@ ul li a {
 
    text-decoration: none; /*Tirar uma linha.*/
    font-weight: 500; /* Para ser objetivo melhor verificar na fonte linkada no head.*/
-
    transition: background 0.2s
 }
 
